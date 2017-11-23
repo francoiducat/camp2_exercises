@@ -20,7 +20,7 @@ const francis = {age:17,name:"Francis"};
 
 // Create two variables `canFriedaDrinkAlcohol` and `canFrancisDrinkAlcohol` to answer, respectively, to the question "Can he / she drink
 // alcohol.".
-// These variables should stay correct if we modify the ages of the objects `francis` and `frieda`.
+// These variables should stay correct if we modify the ages of the objects `francis` and `frieda` in the declaration.
 
 let canFriedaDrinkAlcohol = false;
 let canFrancisDrinkAlcohol = false;
