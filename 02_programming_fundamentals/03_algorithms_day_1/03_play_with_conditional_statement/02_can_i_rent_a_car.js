@@ -1,5 +1,5 @@
 // Do not pay attention to this line for the moment
-const driverData = require('./.driver_data');
+const driverData = require("./.driver_data");
 
 // These are the variables against which you should test
 // driverLicense is a string with the kind of license (ex: AM, B, D...)
@@ -21,7 +21,7 @@ const todayYYYY = date.getFullYear();
 
 let canRentACar;
 
-if(driverLicense === 'B' && todayYYYY-licenceIssued>=3 && (numberOfAccident === 0 || bonus > 0.7)){
+if(driverLicense === "B" && todayYYYY-licenceIssued>=3 && (numberOfAccident === 0 || bonus > 0.7)){
   canRentACar = true;
-  console.log('can drive');
+  console.log("can drive");
 } else { canRentACar = false;}
