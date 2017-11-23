@@ -14,6 +14,14 @@ const bonus = driverData.bonus;
 // Assign a boolean to this variable:
 //   `true` if the driver can rent a car
 //   `false` if not
+// Your code here:
+
+const date = new Date();
+const todayYYYY = date.getFullYear();
+
 let canRentACar;
 
-// Your code here:
+if(driverLicense === 'B' && todayYYYY-licenceIssued>=3 && (numberOfAccident === 0 || bonus > 0.7)){
+  canRentACar = true;
+  console.log('can drive');
+} else { canRentACar = false;}
