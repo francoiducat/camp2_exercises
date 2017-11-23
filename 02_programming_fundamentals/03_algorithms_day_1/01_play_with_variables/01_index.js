@@ -1,5 +1,5 @@
 // a constant called `hello`, bound to a string: "Sparta";
-const hello = 'Sparta';
+const hello = "Sparta";
 
 // a constant called `currentYear`, bound to an integer: 2017;
 const currentYear = 2017;
@@ -15,6 +15,7 @@ const sumResult = foo + bar;
 
 // a constant called `prodResult`, bound to the product of `bar` and `foo`.
 const prodResult = foo * bar;
+
 
 // a constant called `promo`, bound to an object with a field `year`, with the value of `currentYear` and with the field `kind`, with the value of `hello`;
 const promo = {  year: currentYear,kind: hello};
