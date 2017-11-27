@@ -8,7 +8,6 @@
 //
 // * Hint: Use `\n` in string to jump to next line
 // * Hint: `" abc\n ".trim()` will return `"abc"`
-//
 // ## Examples
 //
 // ```
@@ -31,11 +30,24 @@
 // 999999999
 // 10101010101010101010
 // 1111111111111111111111
-// ```
+//
 
 function pattern(size) {
   // Your code here
+  let result = "";
+  for (let i = 1 ; i <size+1;i++) {
+    //console.log(i);
+    for(let j=1;j<=i;j++){
+      result += i ;
+    }
+    result += "\n";
+  }
+  return result.trim();
 }
+
+
+const output = pattern(5);
+console.log(output);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
