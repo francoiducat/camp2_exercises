@@ -22,7 +22,7 @@ function range(number, endNumber) {
   }
 }
 
-
+range(1,10);
 
 
 
