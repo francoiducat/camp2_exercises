@@ -2,12 +2,7 @@
 // When the user won, display a message with the number of tries
 // (Bonus: display a funny message when he success in one try).
 
-function randomNumber() {
-  const x = Math.floor(Math.random()*10);
-  return x;
-}
-
-const randomedNumber = randomNumber();
+const randomedNumber = Math.floor(Math.random()*100);
 
 const readline = require("readline");
 
@@ -24,18 +19,18 @@ function guess(number) {
   if (isNaN(numberInput)) {
     counter++;
     reader.question("This was not a number\n", guess);
-  } else if (numberInput < 0 || numberInput > 10) {
+  } else if (numberInput < 0 || numberInput > 100) {
     counter++;
 
     reader.question("The number is between 1 and 100\n", guess);
   } else if (numberInput === randomedNumber) {
     if(counter === 1){
       console.log(`You are a master! You won in ${counter} try`);
-      reader.close();
     } else {
-      console.log(`You won after ${counter} tries`);
-      reader.close();
+      console.log(`You won in ${counter} steps!`);
     }
+    reader.close();
+
   } else if (numberInput < randomedNumber) {
     counter++;
     reader.question("Too low\n", guess);
