@@ -7,6 +7,4 @@ const getInput = (user1, callback) => {
   callback(user1.key);
 };
 
-
-
 getInput({user: "Lorem", key: "arrow_up"}, log);

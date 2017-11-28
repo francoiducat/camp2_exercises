@@ -44,9 +44,20 @@ const MORSE_CODE = {
   "----.": "9"
 };
 
+console.log(MORSE_CODE["."]);
+
 function decodeMorse(morse) {
   // Your code here
+  let myHumandSentence;
+  let myMorseLetter;
+  for(let i = 0 ; i < morse.length; i++){
+    //
+  }
+
 }
+
+const output = decodeMorse(".");
+console.log(output);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
