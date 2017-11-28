@@ -27,7 +27,7 @@ const reader = readline.createInterface({
 
 function guess(number) {
   console.log(`your number is ${number}`);
-  const numberInput = parseInt((number), 10);
+  const numberInput = parseInt(number, 10);
   if (isNaN(numberInput)) {
     //console.log("This was not a number");
     reader.question("This was not a number\n", guess);
