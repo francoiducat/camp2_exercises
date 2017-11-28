@@ -9,9 +9,34 @@
    YOU MUST USE array.map
 */
 
-function fizzBuzz(list) {
+const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+
+function fizzBuzz(element) {
+  if(element % 15 === 0) {
+    return "fizzBuzz";
+  } else if (element % 5 === 0) {
+    return "Buzz";
+  } else if (element % 3 === 0) {
+    return "Fizz";
+  } else {
+    return element;
+  }
 }
 
+function double(x) {
+  return x * 2;
+}
+
+const x = list.map(fizzBuzz);
+console.log(x);
 
 module.exports = fizzBuzz;
+
+
+
+
+
+//const list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(fizzBuzz);
+
+//console.log(list1);
