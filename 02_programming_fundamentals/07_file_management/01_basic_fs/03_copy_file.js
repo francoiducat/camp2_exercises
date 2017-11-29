@@ -4,4 +4,24 @@
 //
 // The function returns a boolean indicating if it successfully removed the file.
 
+const fs = require("fs");
+
+function copyPaste(source, target){
+  if(isAFile(source)){
+    const file = fs.copyFileSync(source, target, fs.constants.COPYFILE_EXCL);
+    console.log("success");
+    return true;
+  }
+  return false;
+}
+
+function isAFile(path){
+  const stats = fs.lstatSync(path);
+  return stats.isFile();
+}
+
+
+
+copyPaste("hello", "world")
+
 module.exports = copyPaste;
