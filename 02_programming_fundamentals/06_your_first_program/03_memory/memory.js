@@ -15,4 +15,33 @@
 const clear = require("cli-clear");
 
 
+const readline = require("readline");
+
+const reader = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 const cards = ["🐰", "🐰", "🎃", "🎃", "🌲","🌲"];
+console.log(cards.join("   "));
+
+let counter =0;
+function turnOver(card){
+  //console.log(`your number is ${number}`);
+  let cardToTurnOver = parseInt(card, 10);
+  console.log(`The card you want to turn over is card number ${cardToTurnOver}`);
+  cardToTurnOver--;
+  //console.log(cardToTurnOver);
+  let x = cards[cardToTurnOver];
+  console.log(x);
+  counter++;
+  if(counter ===1){
+    reader.question("Turn over one card ",turnOver);
+  } else {
+    console.log(x);
+
+    reader.close();
+  }
+
+}
+reader.question("Turn over one card ",turnOver);
