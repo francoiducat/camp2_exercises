@@ -6,4 +6,11 @@ const path = require("path");
 //
 // pwd() # => "/Users/john/Workspace/my_folder"
 
+function pwd(){
+  return path.resolve();
+}
+
+const output = pwd();
+console.log(output);
+
 module.exports = pwd
