@@ -44,20 +44,33 @@ const MORSE_CODE = {
   "----.": "9"
 };
 
-console.log(MORSE_CODE["."]);
-
 function decodeMorse(morse) {
-  // Your code here
-  let myHumandSentence;
-  let myMorseLetter;
-  for(let i = 0 ; i < morse.length; i++){
-    //
-  }
-
+  const morseSplittedInWordsinAnArray = morse.split("   ");
+  console.log(morseSplittedInWordsinAnArray);
+  return morseSplittedInWordsinAnArray
+    .map((word) => manageWord(word))
+    .join(" ");
 }
 
-const output = decodeMorse(".");
-console.log(output);
+function manageWord (text) {
+
+  const wordInMorseToArray = text.split(" ");
+  return wordInMorseToArray
+    .map((letter) => getLetterFromKey(letter))
+    .join("");
+}
+
+
+function getLetterFromKey(text) {
+  return MORSE_CODE[text];
+}
+
+
+const result = decodeMorse(".... . -.--   .--- ..- -.. .");
+console.log(result);
+
+const lettre = getLetterFromKey(".");
+console.log(lettre);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
