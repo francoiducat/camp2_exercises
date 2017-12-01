@@ -6,7 +6,7 @@ const orangeTree = {
   oranges:0,
   alive:false,
   pickAnOrange:function(){
-    if(this.oranges!==0){
+    if(this.oranges>0){
       this.oranges--;
       return true;
     }
@@ -43,8 +43,5 @@ const orangeTree = {
 }
 
 orangeTree.ageOneYear();
-
-const hauteur = orangeTree[height];
-console.log(hauteur);
 
 module.exports = orangeTree;
