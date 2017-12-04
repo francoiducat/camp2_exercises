@@ -6,9 +6,44 @@ Array1 :  1 2 3
 Array2 :  4 5 6
 Array3 :  7 8 9
 
+Grid
+
+   1 2 3
+a  _|_|_
+b  _|_|_
+c   | |
+
+
+State
+
+const grid = {
+  1 : a1,
+  2 : a2,
+  3 : a3,
+  _ : __;
+  8 : c2,
+  9 : c3,
+  state :
+  displayGrid:function(state){
+
+  }
+}
+
+[[[a:1]:["_"]],[[a;2]:[_]],[[a;3]:["_"]],[[b;1]:["_"]],[b;2],[b;3],[c;1],[c;2],[c;3]]
+
+
+function displayGrid(state){
+  console.log(
+    [0] + separator + [1] + separator + [2] \n
+    [3] + separator + [4] + separator + [5] \n
+    [6] + separator + [7] + separator + [8] \n
+  )
+}
+
 // Proposer alternativement aux joueurs de saisir un n° de cellule entre 1 et 9
 
 // A chaque tour incrémenter un compteur de 1
+
 // Ainsi à chaque n° de tour
 
 if(compteur % 1 === 0) {
@@ -20,6 +55,8 @@ if(compteur % 2 === 0) {
 }
 
 // Joueur 1 (tour 1) : input 3:
+
+// D'abord vérifier si la cellule est vide.
 
 _ _ O
 _ _ _
@@ -43,7 +80,7 @@ X _ 0
 
 // Joueur 1
 
-combinaisonJoeur1 = 1239
+combinaisonJoueur1 = 1239
 
 // Qui gagne ?
 
