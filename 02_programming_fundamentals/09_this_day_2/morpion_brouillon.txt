@@ -80,7 +80,7 @@ X _ 0
 
 // Joueur 1
 
-combinaisonJoueur1 = 1239
+combinaisonJour1 = 1239
 
 // Qui gagne ?
 
