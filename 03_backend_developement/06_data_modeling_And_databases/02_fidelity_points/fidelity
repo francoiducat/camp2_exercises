@@ -1,0 +1,61 @@
+4.1
+CREATE DATABASE my_shop;
+
+4.2
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE purchases (
+id uuid DEFAULT uuid_generate_v4 () CONSTRAINT identifier_constraint PRIMARY KEY,
+client_name varchar(255) NOT NULL,
+euros_spent integer,
+fidelity_points_earned INTEGER,
+purchase_date timestamp,
+number_of_items integer
+);
+
+
+4.3
+
+4.4
+=> Find the three oldest client's name
+select * from purchases
+order by purchase_date asc
+limit 3;
+
+=> Find all clients that have not made a purchase in the last two months
+
+SELECT * from purchases where client_name not in
+(select client_name from purchases where purchase_date > (current_date - 60))
+group by client_name;
+// 0 la tête à toto
+
+=> Find all clients that have not made a purchase in the last month but are big customer
+(have purchased more than 3 items in one purchase previously)
+
+SELECT distinct client_name from purchases where client_name not in
+(select client_name from purchases where purchase_date > (current_date - 30))
+AND client_name in
+(select client_name from purchases where number_of_items > 3);
+
+// 14
+
+=> Find the best client (the one who spent the most money in one purchase)
+select id, client_name, purchase_date, euros_spent from purchases
+order by euros_spent desc;
+
+select client_name from purchases where euros_spent
+in
+(select euros_spent from purchases
+order by euros_spent desc limit 1);
+
+// Howard Abbott	2017-01-30 16:04:17.25	40098
+// Jeffery Cook	2017-07-23 06:40:19.35	40098
+
+
+=> BONUS, find how much money our store made in the summer
+
+select count(euros_spent) from purchases where
+purchase_date > '2017-06-21 00:00:00.000'
+AND
+purchase_date > '2017-09-22 00:00:00.000';
+// 10708303

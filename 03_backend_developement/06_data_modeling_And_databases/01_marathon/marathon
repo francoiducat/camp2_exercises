@@ -1,0 +1,39 @@
+CREATE TABLE races (
+  id integer CONSTRAINT identifier_constraint PRIMARY KEY,
+  race_name varchar(255) NOT NULL,
+  date timestamp,
+  runner_name varchar(255) NOT NULL,
+  bib integer NOT NULL,
+  rank varchar(255) NOT NULL,
+  race_time time
+);
+
+
+INSERT INTO races (id,race_name,date,runner_name,bib,rank,race_time)
+VALUES
+(2,'New York City Marathon - Men','2017/11/05 10:50:00.00','François Ducatillon',78,22,'2:14:47'),
+(3,'New York City Marathon - Women','2017/11/05 9:50:00.00','Christelle Daunay',3,25,'2:32:26'),
+(4,'New York City Marathon - Men','2017/11/05 10:50:00.00','Koen Naert',7,6,'2:08:03')
+
+
+3.1
+select * from races where race_name = 'New York City Marathon - Women';
+
+3.2
+select * from races
+WHERE race_time < '2:30:00'
+AND rank > 100;
+
+3.3
+select * from races
+WHERE id in
+(select id from races where race_time < '2:15:00' AND bib > 100)
+OR id in
+(select id from races where race_time < '2:30:00' AND bib > 100)
+order by race_time asc, bib asc;
+
+3.4 BONUS
+select bib, runner_name, rank from races
+where race_time <
+(select race_time from races where runner_name = 'Koen Naert')
+order by rank;
