@@ -1,4 +1,6 @@
 .env_var
 node_modules
+fixtures
+coverage
 /*.result
 /*.weather
