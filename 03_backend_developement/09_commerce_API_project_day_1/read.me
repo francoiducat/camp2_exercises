@@ -1,0 +1,60 @@
+1. Fetch data from original API
+
+[
+{"id":"9f8d8840-e22c-496f-b865-f5014710e234","decathlon_id":309814,"label":"Chaussettes"},
+{"id":"98bbd88d-6e8c-4be6-8a2c-ef8e6ceca3af","decathlon_id":735058,"label":"Vêtements femme"},
+{"id":"ee62f748-5efc-4c9f-97e8-4bd635296ba3","decathlon_id":771006,"label":"Amorçage carpe"}
+]
+
+
+2. Store Data
+
+Create DB
+
+CREATE TABLE categories (
+  id uuid DEFAULT uuid_generate_v4 () CONSTRAINT categorie_constraint PRIMARY KEY,
+  decathlon_id integer NOT NULL,
+  label text
+);
+
+INSERT INTO categories (id,decathlon_id,label)
+VALUES
+
+(,,''),
+(,,''),
+(,,'')
+
+CREATE TABLE brands (
+  id uuid DEFAULT uuid_generate_v4 () CONSTRAINT brand_constraint PRIMARY KEY,
+  title varchar(255) NOT NULL
+);
+
+
+CREATE TABLE products (
+  id uuid DEFAULT uuid_generate_v4 () CONSTRAINT product_constraint PRIMARY KEY,
+  decathlon_id integer NOT NULL,
+  title varchar(255) NOT NULL,
+  description varchar(255),
+  brand_id varchar(255) NOT NULL,
+  min_price float,
+  max_price float,
+  crossed_price float,
+  percent_reduction float,
+  image_path text,
+  rating integer
+);
+
+CREATE TABLE products_categories (
+  category_id uuid DEFAULT uuid_generate_v4 (),
+  product_id uuid DEFAULT uuid_generate_v4 ()
+);
+
+3. Create my own API.
+
+"SELECT * FROM brands";
+
+[
+  {value1, value2},
+  {value1,value1},
+  {value1, value2}
+]
