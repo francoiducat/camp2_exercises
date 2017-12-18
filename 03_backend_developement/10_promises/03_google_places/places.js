@@ -31,8 +31,7 @@ function weatherByLatitudeAndLongitude(latitude,longitude) {
         temperature : forecast.main.temp,
         date : forecast.dt
       };
-    }))
-  ;
+    }));
 }
 
 function timestampToDate(timestamp) {
