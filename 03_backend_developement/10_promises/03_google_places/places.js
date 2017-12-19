@@ -9,11 +9,7 @@ const GOOGLEPLACES_APIKEY = process.env.GOOGLEPLACES_APIKEY;
 function getPlaceCoordinates(place) {
   return fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${place}&key=${GOOGLEPLACES_APIKEY}`)
     .then(response => response.json())
-    .then(json => json.results)
-    .then(place_details => place_details[0])
-    .then(object => object.geometry)
-    .then(coordinates => coordinates.location)
-    .then(location => weatherByLatitudeAndLongitude(location.lat,location.lng))
+    .then(json => weatherByLatitudeAndLongitude(json.results[0].geometry.location.lat,json.results[0].geometry.location.lng))
     .then(temps => {
       temps.forEach(tempObject => {console.log("Temperature at " + place + " is " + tempObject.temperature + " at " + timestampToDate(tempObject.date));});
     })

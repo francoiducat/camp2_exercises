@@ -17,7 +17,6 @@ app.get("/", function(request, result) {
 // console.log("Server listening on port:" + port);
 // });
 
-
 // function sleep(seconds){
 //   const waitUntil = new Date().getTime() + seconds*1000;
 //   console.log(“wait:“, waitUntil);
@@ -61,44 +60,13 @@ function getProductsbyCategory(id){
             }
           });
       });
-
       console.log(compteur);
-
     }
   });
 
 }
 
 getProductsbyCategory();
-
-//
-// [
-//   {clé,valeur},
-//   {clé,valeur},
-//   {clé,valeur},
-//   {clé,valeur}
-// ].forEach()
-
-
-
-// const uuid = [
-// uuid,
-// uuid,
-// uuid
-// ]
-//
-// uuid.forEach(function getProducts)
-//
-// insert
-
-// requet(
-//   url / catzgories/${id}/products
-// )
-
-
-
-
-
 
 
 function getProductsbyID(){
