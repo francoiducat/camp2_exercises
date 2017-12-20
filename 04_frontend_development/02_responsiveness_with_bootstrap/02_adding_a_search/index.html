@@ -39,7 +39,7 @@
     myInput.addEventListener("input", function() {
       // each time something is typed into the input
       // it will call this function and display the value you typed
-      filterArray(this.value);
+      displayDepartments(DEPARTMENTS.filter(element => element.includes(myInput.value.toUpperCase())));
     });
 
 

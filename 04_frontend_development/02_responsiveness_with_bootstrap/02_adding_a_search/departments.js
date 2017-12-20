@@ -102,14 +102,9 @@ const DEPARTMENTS = [
   "RÉUNION"
 ];
 
-function filterArray(input) {
-  const dep = DEPARTMENTS.filter(element => {
-    if (element.includes(input.toUpperCase())) {
-      return true;
-    }
-  });
-  displayDepartments(dep);
-}
+// function filterArray(input) {
+//   displayDepartments(DEPARTMENTS.filter(element => element.includes(input.toUpperCase())));
+// }
 
 function displayDepartments(departments) {
   const container = document.querySelector("#department-list");
