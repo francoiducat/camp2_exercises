@@ -2,5 +2,6 @@
 node_modules
 fixtures
 coverage
+.sass-cache
 /*.result
 /*.weather
