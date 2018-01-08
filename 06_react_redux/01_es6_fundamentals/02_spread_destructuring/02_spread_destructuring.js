@@ -1,13 +1,32 @@
+const employee = {
+  firstName: "John",
+  lastname: "Doe"
+};
+
+const manager = {
+  salary : 1000
+};
+
+const {salary} = manager;
+const { firstName, lastname } = employee;
+console.log(firstName + " " + lastname + " " + salary);
+
+
+
+
 function go(options) {
   let {
     speed = 4,
-    enable: { hyperdrive = false, frobnifier = true}
+    enable: { hyperdrive = false, frobnifier = true} = {}
   } = options;
 
   console.log("speed=", speed, "hyperdrive:", hyperdrive, "frobnifier:", frobnifier);
 }
 
-go({ speed: 5 });
+go({
+  speed: 5
+});
+
 
 function lastIndexOf(arr, elt, start) {
   for (let i = start - 1; i >= 0; i--) {
@@ -19,7 +38,8 @@ function lastIndexOf(arr, elt, start) {
   return -1;
 }
 
-console.log(lastIndexOf([1, 2, 1, 2], 2));
+
+console.log(lastIndexOf([3, 2, 1, 2], 2));
 
 function replace(array, from, to, elements) {
   array.splice.apply(array, [from, to - from].concat(elements));
@@ -34,3 +54,10 @@ function copyReplace(array, from, to, elements) {
 }
 
 console.log(copyReplace([1, 2, 100, 200, 6], 2, 4, [3, 4, 5]));
+
+module.exports = {
+  go:go,
+  lastIndexOf: lastIndexOf,
+  replace: replace,
+  copyReplace: copyReplace
+};
