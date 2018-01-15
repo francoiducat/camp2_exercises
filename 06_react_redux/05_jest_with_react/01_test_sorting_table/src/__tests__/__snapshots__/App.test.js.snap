@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`everything looks the same 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th
+        onClick={[Function]}
+      >
+        ID
+      </th>
+      <th
+        onClick={[Function]}
+      >
+        Title
+      </th>
+      <th
+        className="priceHeader"
+        onClick={[Function]}
+      >
+        Price
+      </th>
+    </tr>
+  </thead>
+</table>
+`;
+
+exports[`everything looks the same with props 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th
+        onClick={[Function]}
+      >
+        ID
+      </th>
+      <th
+        onClick={[Function]}
+      >
+        Title
+      </th>
+      <th
+        className="priceHeader"
+        onClick={[Function]}
+      >
+        Price
+      </th>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+      8282689
+    </td>
+    <td>
+      Corne chasse 14cm
+    </td>
+    <td
+      className="price"
+    >
+      9.99
+    </td>
+  </tr>
+</table>
+`;
