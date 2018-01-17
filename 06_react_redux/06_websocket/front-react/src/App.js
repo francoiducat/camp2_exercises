@@ -87,7 +87,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">SLACKY</h1>
+          <h1 className="App-title mt-5">SLACKY</h1>
         </header>
         <p>There is <span id="nbUsers">0</span> users connected.</p>
 
