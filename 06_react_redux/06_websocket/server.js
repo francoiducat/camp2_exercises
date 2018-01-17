@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "/views")));
 
 // We store the number of users as a global variable
 let numberOfUsers = 0;
-let user = "";
+let users = [];
 
 // We open a websocket connection
 const wss = new WebSocket.Server({server});
@@ -22,7 +22,6 @@ wss.on("connection", (ws, req) => {
   wss.clients.forEach((client) => {
     if (client.readyState === WebSocket.OPEN) {
       client.send(numberOfUsers);
-      client.send(user);
     }
   });
 
