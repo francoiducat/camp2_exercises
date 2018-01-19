@@ -9,10 +9,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      temp : "0",
+      temp : "Loading...",
       cityName : "Lille"};
   }
-
 
   weatherByCityName(city) {
       return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${OPENWEATHER_APIKEY}`)
@@ -22,7 +21,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-
     this.weatherByCityName(this.state.cityName)
           .then(temperature => this.setState({temp : temperature}))
           .catch(e => console.log(e));
@@ -35,14 +33,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Open Weather API Call</h1>
         </header>
-        <p className="App-intro">
           <p>Temperature in { this.state.cityName } is {this.state.temp} °C</p>
-        </p>
       </div>
     );
   }
 }
-
-
 
 export default App;
