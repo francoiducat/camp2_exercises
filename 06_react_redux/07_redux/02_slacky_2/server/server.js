@@ -41,7 +41,6 @@ wss.on("connection", function connection(ws, req) {
   ws.on("error", console.warn);
 });
 
-
 server.on("request", app);
 server.listen(8080, function listening() {
   console.log("Listening on ", server.address().port);
